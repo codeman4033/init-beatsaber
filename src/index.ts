@@ -25,9 +25,6 @@ async function downloadFile(
   try {
     packageJsonContent = await fsPromises.readFile(packageJsonPath, 'utf-8')
   } catch (error) {
-    core.warning(
-      `Failed to read package.json from ${packageJsonPath}. Using default version.`
-    )
     packageJsonContent = JSON.stringify({ version: '1.0.0' })
   }
 
